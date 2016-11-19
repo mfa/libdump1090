@@ -130,7 +130,7 @@ class ModeSDetector(object):
     def readFromRTLSDR(self, times):
         if not self.rtlsdr.init:
             self.initRTLSDR()
-        for i in xrange(0, times):
+        for _ in xrange(0, times):
             data = self.rtlsdr.read_bytes(self.ADSB_BUF_SIZE)
             self.processFromRTLSDR(data)
 
